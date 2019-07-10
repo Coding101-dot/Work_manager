@@ -1,0 +1,21 @@
+{% extends 'tasksmanager/base.html' %}
+{% load bootstrap3 %}
+
+{% block title_html %}
+  Add Task
+{% endblock %}
+
+{% block h1 %}
+  Add Task
+{% endblock %}
+
+{% block article %}
+  <form method="post" action="{% url 'tasksmanager:add_task' %}">
+      {% csrf_token %}
+      <table>
+          {% csrf_token %}
+          {% bootstrap_form form %}
+      </table>
+      <p><input type="submit" value="Create"></p>
+  </form>
+{% endblock %}

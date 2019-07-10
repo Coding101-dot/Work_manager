@@ -1,0 +1,20 @@
+{% extends 'tasksmanager/base.html' %}
+{% load bootstrap3 %}
+
+{% block title_html %}
+  Create Supervisor
+{% endblock %}
+
+{% block h1 %}
+Create Supervisor
+{% endblock %}
+
+{% block article %}
+  <form method="post" action="{% url 'tasksmanager:create_supervisor' %}">
+      {% csrf_token %}
+      <table>
+        {% bootstrap_form form %}
+      </table>
+      <p><input type="submit" value="Create"></p>
+  </form>
+{% endblock %}

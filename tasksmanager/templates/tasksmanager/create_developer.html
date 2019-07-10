@@ -1,0 +1,21 @@
+{% extends 'tasksmanager/base.html' %}
+{% load bootstrap3 %}
+
+{% block title_html %}
+  Create Developer
+{% endblock %}
+
+{% block h1 %}
+Create Developer
+{% endblock %}
+
+{% block article %}
+<h3>In developer column add name of Project supervisor.</h3>
+  <form method="post" action="{% url 'tasksmanager:create_developer' %}">
+      {% csrf_token %}
+      <table>
+        {% bootstrap_form form %}
+      </table>
+      <p><input type="submit" value="Create"></p>
+  </form>
+{% endblock %}

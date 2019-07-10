@@ -1,0 +1,40 @@
+{% extends "tasksmanager/base.html" %}
+{% load bootstrap3 %}
+
+{% block title_html %}
+  sss
+{% endblock %}
+
+{% block h1 %}
+  Projects list
+{% endblock %}
+  {% block article %}
+  <h3>{{ action }}</h3>
+  {% if all_projects|length > 0 %}
+  <table cellspacing=”10″ cellpadding=”10″>
+
+      <thead>
+        <tr>
+            <th>ID</th>
+            <th style="width:150px">Title</th>
+            <th style="width:150px">Client</th>
+            <th style="width:200px">Description</th>
+            <th style="width:150px">Delete</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      {% for project in all_projects %}
+        <tr>
+            <td>{{ project.id }}</td>
+            <td>{{ project.Title }}</td>
+            <td>{{ project.Client }}</td>
+            <td>{{ project.Description }}</td>
+             <td><a href="{% url 'tasksmanager:project_delete' project.id %}">Delete</a></td>
+        {% endfor %}
+      </tbody>
+  </table>
+  {% else %}
+  <span>No project.</span>
+  {% endif %}
+  {% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'tasksmanager/base.html' %}
+
+{% block title_html %}
+  Task view
+{% endblock %}
+
+{% block h1 %}
+  Task Detail
+{% endblock %}
+
+{% block article %}
+ <h4>
+   {{ object.Title }}
+ </h4>
+<table>
+    <tr>
+        <td style="width:150px"> Project : {{ object.Project }}</td>
+       <td>Developer : {{ object.UserProfile }}</td>
+    </tr>
+
+    <tr>
+       <td style="width:150px">Importance : {{ object.Importance }}</td>
+       <td>Time elapsed : {{ object.Time_Elapsed }}</td>
+    </tr>
+    </table>
+    <p>
+     {{ object.description }}
+    </p>
+{% endblock %}

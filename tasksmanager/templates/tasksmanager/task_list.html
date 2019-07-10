@@ -1,0 +1,28 @@
+{% extends 'tasksmanager/base.html' %}
+
+{% block title_html %}
+  Task_list
+{% endblock %}
+
+{% block h1 %}
+ Task List
+{% endblock %}
+
+{% block article %}
+<table cellspacing=”20″ cellpadding=”20″>
+   <tr>
+     <th style="width:150px">Title</th>
+     <th style="width:300px">Description</th>
+     <th colspan='2'><a href="{% url 'tasksmanager:add_task' %}">Create</a></th>
+   </tr>
+
+{% for task in task_list %}
+<tr>
+   <td><a href="{% url 'tasksmanager:task_detail' task.id %}">{{ task.Title }}</a></td>
+   <td>{{ task.Description|truncatechars:100 }}</td>
+   <td><a href="{% url 'tasksmanager:update_task' task.id %}">Edit--</a></td>
+   <td><a href="{% url 'tasksmanager:task_delete' task.id %}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'tasksmanager/base.html'%}
+{% load bootstrap3 %}
+
+ {% block title_html %}
+  Tasks
+ {% endblock %}
+
+{% block h1 %}
+ Task list
+{% endblock %}
+
+  {% block article %}
+  <h3>{{ action }}</h3>
+  {% if all_tasks|length > 0 %}
+  <table cellspacing=”10″ cellpadding=”10″>
+
+      <thead>
+        <tr><th style="width:50px">ID</th>
+            <th style="width:150px">Project</th>
+            <th style="width:150px">Task</th>
+            <th style="width:200px">Description</th>
+            <th style="width:150px"> Urgency</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      {% for task in all_tasks %}
+        <tr>
+            <td>{{ task.id }}</td>
+            <td>{{ task.Project }}</td>
+            <td>{{ task.Title }}</td>
+            <td>{{ task.Description }}</td>
+            <td>{{ task.Importance }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+  {% else %}
+  <span>Fix me</span>
+  {% endif %}
+  {% endblock %}
+
+
+
+
+
+
+
+
+

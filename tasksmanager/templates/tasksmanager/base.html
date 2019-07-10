@@ -1,0 +1,61 @@
+{% load bootstrap3 %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta CHARSET="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title_html %}{% endblock %}</title>
+
+       {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+  </head>
+
+<style>
+</style>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container-fluid">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed"
+             data-toggle="collapse" data-target="#navbar"
+             aria-expanded="false" aria-controls="navbar">
+                  </button>
+                  <a class="navbar-brand" href="{% url 'tasksmanager:public_index'%}">Projects</a>
+              </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                      <li><a href="{% url 'tasksmanager:tasks' %}">Tasks</a></li>
+
+                      <li><a href="{% url 'tasksmanager:task_list' %}">Task List</a></li>
+
+                  </ul>
+
+                   <ul class="nav navbar-nav navbar-right">
+                       <li><a href="{% url 'tasksmanager:add_task' %}">Add Task</a></li>
+                       <li><a href="{% url 'tasksmanager:create_supervisor' %}">Create Supervisor</a></li>
+                       <li><a href="{% url 'tasksmanager:create_developer' %}">Create Developer</a></li>
+                       <li><a href="{% url 'tasksmanager:create_project' %}">Create Project</a></li>
+                       <li><a href="{% url 'tasksmanager:login' %}">Login</a></li>
+                       <li><a href="{% url 'tasksmanager:register' %}">Register</a></li>
+                       <li><a href="{% url 'tasksmanager:logout' %}">Logout</a></li>
+                   </ul>
+              </div>
+          </div>
+    </nav>
+    {% csrf_token %}
+
+    <div>
+        {% block header %}{% endblock %}
+    </div>
+    <div>
+      {% block article %}{% endblock %}
+    </div>
+  </body>
+</html>
+
+

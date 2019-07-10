@@ -1,0 +1,26 @@
+{% extends 'tasksmanager/base.html' %}
+
+{% block title_html %}
+  Delete project
+{% endblock %}
+
+{% block h1 %}
+  Delete project
+{% endblock %}
+
+{% block article %}
+
+<h3> Do you want to delete the following content.</h3>
+<br>
+{{ object.Title }}
+
+<form method="post" action="">
+    {% csrf_token %}
+    <br>
+    <table>
+        {{ form.as_table }}
+    </table>
+    <p><input type="submit" value="Delete" /></p>
+</form>
+
+{% endblock %}
