@@ -24,3 +24,9 @@
 
 #apt-get install python3.7
 #apt-get install pip3
+# After this you can intstall django using:
+# pip install Django
+#you also need to install bootstrap which is 
+# pip install bootstrap
+# After all this run command python manage.py runserver and go to the registration bar to register an account.
+#Thanks it's very basic but feel free to use and abuse.
