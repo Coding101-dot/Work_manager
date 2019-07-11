@@ -31,7 +31,7 @@ class Supervisor(UserProfile):
 
 
 class Developer(UserProfile):
-    Supervisor = models.ForeignKey(Supervisor, name='Supervisor', on_delete=models.PROTECT)
+    Supervisor = models.ForeignKey(Supervisor, name='Supervisor', on_delete=models.CASCADE)
 
 
 class Task(models.Model):
@@ -41,8 +41,8 @@ class Task(models.Model):
                                        default=None, blank=True)
     importance = models.IntegerField(name='Importance')
     project = models.ForeignKey(Project, name='Project', null=True,
-                                default=None, blank=True, on_delete=models.PROTECT)
-    app_user = models.ForeignKey(UserProfile, name='UserProfile', on_delete=models.PROTECT)
+                                default=None, blank=True, on_delete=models.CASCADE)
+    app_user = models.ForeignKey(UserProfile, name='UserProfile', on_delete=models.CASCADE)
     developers = models.ManyToManyField(Developer, related_name='developers', through='DeveloperWorkTask')
 
     def __str__(self):
@@ -50,8 +50,8 @@ class Task(models.Model):
 
 
 class DeveloperWorkTask(models.Model):
-    developer = models.ForeignKey(Developer, on_delete=models.PROTECT)
-    task = models.ForeignKey(Task, on_delete=models.PROTECT)
+    developer = models.ForeignKey(Developer, on_delete=models.CASCADE)
+    task = models.ForeignKey(Task, on_delete=models.CASCADE)
     time_elapsed_dev = models.IntegerField(name='Time Elapsed', null=True, default=None,
                                            blank=True)
 
