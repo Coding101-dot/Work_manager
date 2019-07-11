@@ -58,7 +58,7 @@ class Task_delete(DeleteView):
 class Project_delete(DeleteView):
     model = Project
     template_name = 'tasksmanager/confirm_delete_project.html'
-    succsess_url = 'tasksmanager:public_index'
+    success_url = 'tasksmanager:public_index'
 
     def get_success_url(self):
         return reverse(self.success_url)
