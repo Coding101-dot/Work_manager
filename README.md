@@ -1,5 +1,4 @@
-# This is a very basic project or task manager which you can use to keep track of your at home
-# development projects.
+# This is a very basic project or task manager which you can use to keep track of your at home development projects.
 
 #Author
 #Henk Labuschagne
