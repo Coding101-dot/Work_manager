@@ -2,7 +2,7 @@
 
 #Author
 # Henk Labuschagne
-# henk.law2@gmail.conm
+# henk.law2@gmail.com
 
 #Check out my blog at 
 # https://wordpress.com/view/techtrue.home.blog
