@@ -19,3 +19,5 @@
 
 #Clone project,open in pycharm and run the command: python manage.py runserver
 #make sure you are in the folder where the manage.py file is locates.run command from terminal window.
+
+#You need python, pip, and pycharm community edition to run this program. That is all as far as I know.
