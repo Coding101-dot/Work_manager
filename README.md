@@ -16,3 +16,6 @@
 
 #License
 #MIT license
+
+#Clone project,open in pycharm and run the command: python manage.py runserver
+#make sure you are in the folder where the manage.py file is locates.run command from terminal window.
