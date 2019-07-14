@@ -5,7 +5,7 @@
 # henk.law2@gmail.com
 
 #Check out my blog at 
-# https://wordpress.com/view/techtrue.home.blog
+# https://wordpress.com/view/techstudents1.wordpress.com
 
 #My youtube channel at
 # https://www.youtube.com/channel/UCnb54nd3iFGORQwRuquEzOA?view_as=subscriber
